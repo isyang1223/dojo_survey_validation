@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+
+    <title>Dojo Survey Index</title>
+
+    <link rel="stylesheet" type="text/css" href="main.css" />
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <form action='/results' method='post'>
+        {% with messages = get_flashed_messages() %} 
+            {% if messages %} 
+                {% for message in messages %}
+                    <p>{{message}}</p>
+                {% endfor %} 
+            {% endif %} 
+        {% endwith %}
+
+        Your name: 
+        <input type='text' name='name'>
+        <br>
+        Dojo Location:
+        <select name="location">
+            <option value="San Jose">San Jose</option>
+            <option value="Seattle">Seattle</option>
+            <option value="Mountain view">Mountain view</option>
+            <option value="Berkeley">Berkeley</option>
+        </select>
+        <br>
+        Favorite Language:
+        <select name="language">
+            <option value="HTML">HTML</option>
+            <option value="Python">Python</option>
+            <option value="Javascript">Javascript</option>
+            <option value="Ruby">Ruby</option>
+        </select><br>
+        Comment(optional):<br>
+        <input type="textarea" name="comment">
+
+
+
+
+        <input type='submit' value='Submit'>
+    </form>
+
+</body>
+
+</html>
